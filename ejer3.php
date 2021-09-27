@@ -13,8 +13,10 @@
 
         public function __construct($edad)
         {
-            $this->edad = $edad;
-
+            $this->edad = (int)$edad;
+            if($this->edad != $edad){
+                throw new InvalidArgumentException();
+            }
         }
 
         public function mayorQue()
@@ -37,7 +39,7 @@
     {
         $obj = new RangoEdad(57);
         $obj -> mayorQue();
-    }catch(Exception $e)
+    }catch(InvalidArgumentException $e)
     {   
         echo $e;
     }

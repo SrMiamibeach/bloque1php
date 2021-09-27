@@ -13,9 +13,12 @@
 
         public function __construct($n1,$n2,$n3)
         {
-            $this->n1 = $n1;
-            $this->n2 = $n2;
-            $this->n3 = $n3;
+            $this->n1 = (int)$n1;
+            $this->n2 = (int)$n2;
+            $this->n3 = (int)$n3;
+            if($this->n1 != $n1 || $this->n2 != $n2 || $this->n3 != $n3){
+                throw new InvalidArgumentException();
+            }
         }
 
         public function mayorQue()
@@ -29,8 +32,13 @@
             }
         }
     }
-    $obj = new Mayor(1,4,7);
-    $obj -> mayorQue();
+    try{
+        $obj = new Mayor(1,4,7);
+        $obj -> mayorQue();
+    }catch(InvalidArgumentException $e){
+        echo $e;
+    }
+    
     ?>
 </body>
 

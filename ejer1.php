@@ -10,11 +10,14 @@
     class Comunidad
     {
         private $nPuertas, $nPisos;
-        private $letras = array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "", "", "", "", "", "", "");
+        private $letras = array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X","Y","Z");
         public function __construct($puertas, $pisos)
         {
-            $this->nPuertas = $puertas;
-            $this->nPisos = $pisos;
+            $this->nPuertas = (int)$puertas;
+            $this->nPisos = (int)$pisos;
+            if($this->nPuertas != $puertas || $this->nPisos != $pisos){
+                throw new InvalidArgumentException();
+            }
         }
 
         public function lista()
@@ -32,9 +35,9 @@
     }
     try
     {
-        $obj = new Comunidad(4,6);
+        $obj = new Comunidad(3,6);
         $obj -> lista();
-    }catch(Exception $e)
+    }catch(InvalidArgumentException $e)
     {
         echo $e;
     }
