@@ -20,12 +20,15 @@
         public function esPalindroma()
         {
             $lowerWord = strtolower($this->word);
-            $lowerWord = preg_replace('/\s/','',$lowerWord); //str_replace(' ', '', $lowerWord)
-            $reverseWord="";
-            for($i = 0; $i <strlen($this->word);$i++){
-                echo $lowerWord[$i];
+            $lowerWord = preg_replace('/\s/', '', $lowerWord); //str_replace(' ', '', $lowerWord)
+            $reverseWord = strrev($lowerWord);
+            if ($reverseWord == $lowerWord) 
+            {
+                echo $this->word . " es palindroma";
+            } else 
+            {
+                echo $this->word . " no es palindroma";
             }
-            
         }
     }
     try {
