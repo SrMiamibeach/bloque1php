@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-<head></head>
+<head>
+    <title>tresXMasUno</title>
+</head>
 
 <body>
     <?php

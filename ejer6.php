@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-<head></head>
+<head>
+    <title>Potencia</title>
+</head>
 
 <body>
     <?php
@@ -18,10 +20,9 @@
             $cont = 1;
             $num = 1;
             $exit = false;
-            while (pow($cont, $this->potencia) < $this->cantidad) 
-            {
-                    $num = pow($cont, $this->potencia);
-                    echo $num . "<br>";
+            while (pow($cont, $this->potencia) < $this->cantidad) {
+                $num = pow($cont, $this->potencia);
+                echo $num . "<br>";
                 $cont++;
             }
         }

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-<head></head>
+<head>
+    <title>Palindroma</title>
+</head>
 
 <body>
     <?php
@@ -22,11 +24,9 @@
             $lowerWord = strtolower($this->word);
             $lowerWord = preg_replace('/\s/', '', $lowerWord); //str_replace(' ', '', $lowerWord)
             $reverseWord = strrev($lowerWord);
-            if ($reverseWord == $lowerWord) 
-            {
+            if ($reverseWord == $lowerWord) {
                 echo $this->word . " es palindroma";
-            } else 
-            {
+            } else {
                 echo $this->word . " no es palindroma";
             }
         }

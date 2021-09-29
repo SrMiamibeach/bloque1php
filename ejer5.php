@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-<head></head>
+<head>
+    <title>Parque</title>
+</head>
 
 <body>
     <?php
@@ -16,22 +18,22 @@
         }
         public function puedeSubir()
         {
-            if($this->acompañado){
-                if( $this->edad >= 6){
+            if ($this->acompañado) {
+                if ($this->edad >= 6) {
                     echo "Puede entrar";
-                }else{
+                } else {
                     echo "No puede entrar";
                 }
-            }else{
-                if( $this->edad >= 10 || $this->altura >= 120){
+            } else {
+                if ($this->edad >= 10 || $this->altura >= 120) {
                     echo "Puede entrar";
-                }else{
+                } else {
                     echo "No puede entrar";
                 }
             }
         }
     }
-    $obj = new Parque("6",120,false);
+    $obj = new Parque("6", 120, false);
     $obj->puedeSubir();
     ?>
 </body>
